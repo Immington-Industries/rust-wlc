@@ -22,8 +22,8 @@
 //! extern crate rustwlc;
 //! use rustwlc::callback;
 //! // VIEW_ACTIVATED is a bitflags enum variant, and those must be imported
-//! // manually, or using a wildcatd.
-//! use rustwlc::{WlcView, VIEW_ACTIVATED};
+//! // manually, or using a wildcard.
+//! use rustwlc::{WlcView, WlcViewable, VIEW_ACTIVATED};
 //!
 //! // Callbacks must be labeled extern as they will be called from C
 //! extern "C" fn view_created(view: WlcView) -> bool {
@@ -73,7 +73,7 @@ pub mod wayland;
 pub mod xkb;
 
 pub use types::*;
-pub use handle::{WlcOutput, WlcView};
+pub use handle::{WlcOutput, WlcOutputable, WlcView, WlcViewable};
 
 // Log Handler hack
 static mut rust_logging_fn: fn(_type: LogType, string: &str) = default_log_callback;
