@@ -11,6 +11,9 @@ use libc::{uintptr_t, c_char, c_void};
 use super::pointer_to_string;
 use super::types::{Geometry, ResizeEdge, Point, Size, ViewType, ViewState};
 
+use std::hash::Hash;
+use std::fmt::Debug;
+
 #[repr(C)]
 #[derive(Debug, Clone, Copy, PartialEq, Eq, PartialOrd, Ord, Hash)]
 /// Represents a handle to a wlc view.
@@ -124,7 +127,7 @@ impl From<WlcOutput> for WlcView {
 
 /// A trait defining the methods on a wlc output handle.
 /// This trait is exposed to aid testing when wlc isn't running
-pub trait Output {
+pub trait Output: Debug + Clone + Copy + PartialEq + Eq + PartialOrd + Ord + Hash {
 
     /// Compatability/debugging function.
     ///
@@ -218,7 +221,7 @@ pub trait Output {
 
 /// A trait defining the methods on a wlc view handle.
 /// This trait is exposed to aid testing when wlc isn't running
-pub trait View {
+pub trait View: Debug + Clone + Copy + PartialEq + Eq + PartialOrd + Ord + Hash  {
 
     /// Compatability/debugging function.
     ///
