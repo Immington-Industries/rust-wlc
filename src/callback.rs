@@ -145,7 +145,7 @@ extern "C" {
 ///
 /// # Example
 /// ```rust
-/// use rustwlc::{WlcOutput, WlcOutputable};
+/// use rustwlc::{WlcOutput, Output};
 ///
 /// extern fn on_output_created(output: WlcOutput) -> bool {
 ///     println!("Output {} ({:?}) was created", output.get_name(), output);
@@ -180,7 +180,7 @@ pub fn output_destroyed(callback: extern "C" fn(output: WlcOutput)) {
 ///
 /// # Example
 /// ```rust
-/// use rustwlc::{WlcOutput, WlcOutputable};
+/// use rustwlc::{WlcOutput, Output};
 ///
 /// extern fn output_focus(output: WlcOutput, focused: bool) {
 ///     println!("Output {} {} focus", output.get_name(),
@@ -198,7 +198,7 @@ pub fn output_focus(callback: extern "C" fn(output: WlcOutput, focused: bool)) {
 ///
 /// # Example
 /// ```rust
-/// use rustwlc::{WlcOutput, WlcOutputable};
+/// use rustwlc::{WlcOutput, Output};
 /// use rustwlc::Size;
 ///
 /// extern fn output_resolution(output: WlcOutput,
@@ -254,7 +254,7 @@ pub fn output_render_post(callback: extern "C" fn(output: WlcOutput)) {
 ///
 /// # Example
 /// ```rust
-/// use rustwlc::{WlcView, WlcViewable, WlcOutputable};
+/// use rustwlc::{WlcView, View, Output};
 ///
 /// extern fn view_created(view: WlcView) -> bool {
 ///     println!("View \"{}\" was created ({:?})", view.get_class(), view);
@@ -297,7 +297,7 @@ pub fn view_destroyed(callback: extern "C" fn(view: WlcView)) {
 ///
 /// # Example
 /// ```rust
-/// use rustwlc::{WlcView, WlcViewable};
+/// use rustwlc::{WlcView, View};
 /// // The bitflags constants need to be imported manually.
 /// use rustwlc::VIEW_ACTIVATED;
 ///

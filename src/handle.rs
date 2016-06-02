@@ -124,7 +124,7 @@ impl From<WlcOutput> for WlcView {
 
 /// A trait defining the methods on a wlc output handle.
 /// This trait is exposed to aid testing when wlc isn't running
-pub trait WlcOutputable {
+pub trait Output {
 
     /// Compatability/debugging function.
     ///
@@ -218,7 +218,7 @@ pub trait WlcOutputable {
 
 /// A trait defining the methods on a wlc view handle.
 /// This trait is exposed to aid testing when wlc isn't running
-pub trait WlcViewable {
+pub trait View {
 
     /// Compatability/debugging function.
     ///
@@ -232,7 +232,7 @@ pub trait WlcViewable {
     ///
     /// # Example
     /// ```rust
-    /// # use rustwlc::{WlcView, WlcViewable};
+    /// # use rustwlc::{WlcView, View};
     /// # // This example can be run because WlcView::root() does not interact with wlc
     /// let view = WlcView::root();
     /// assert!(view.is_root());
@@ -247,7 +247,7 @@ pub trait WlcViewable {
     ///
     /// # Example
     /// ```rust
-    /// # use rustwlc::{WlcView, WlcViewable};
+    /// # use rustwlc::{WlcView, View};
     /// let view = WlcView::root();
     /// assert!(view.is_root());
     /// assert!(!view.is_window());
@@ -433,7 +433,7 @@ impl WlcOutput {
 
 }
 
-impl WlcOutputable for WlcOutput {
+impl Output for WlcOutput {
 
     /// Compatability/debugging function.
     ///
@@ -617,7 +617,7 @@ impl WlcView {
     ///
     /// # Example
     /// ```
-    /// # use rustwlc::{WlcView, WlcViewable};
+    /// # use rustwlc::{WlcView, View};
     /// let view = WlcView::root();
     /// assert!(view.is_root());
     /// ```
@@ -627,7 +627,7 @@ impl WlcView {
 
 }
 
-impl WlcViewable for WlcView {
+impl View for WlcView {
 
     /// Compatability/debugging function.
     ///
@@ -643,7 +643,7 @@ impl WlcViewable for WlcView {
     ///
     /// # Example
     /// ```rust
-    /// # use rustwlc::{WlcView, WlcViewable};
+    /// # use rustwlc::{WlcView, View};
     /// # // This example can be run because WlcView::root() does not interact with wlc
     /// let view = WlcView::root();
     /// assert!(view.is_root());
@@ -660,7 +660,7 @@ impl WlcViewable for WlcView {
     ///
     /// # Example
     /// ```rust
-    /// # use rustwlc::{WlcView, WlcViewable};
+    /// # use rustwlc::{WlcView, View};
     /// let view = WlcView::root();
     /// assert!(view.is_root());
     /// assert!(!view.is_window());
