@@ -1,3 +1,7 @@
+### Shamelessly copied from glib-sys-0.3.3/Cargo.toml.
+[build-dependencies]
+pkg-config = "0.3.7"
+
 [package]
 name = "rustwlc"
 description = "wlc Wayland library bindings for Rust"
