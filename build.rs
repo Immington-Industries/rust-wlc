@@ -59,9 +59,6 @@ fn find() -> Result<(), Error> {
     let package_name = "wlc";
     let shared_libs = ["wlc"];
 
-    // https://github.com/way-cooler/rust-wlc#rust-wlc currently
-    // (i.e. commit 97e0d5816fe7ec97dae20196d1e25c550f60f08f) suggests
-    // version 0.0.7.
     let version = if cfg!(feature = "0.0.8") {
         "0.0.8"
     } else if cfg!(feature = "0.0.7") {
